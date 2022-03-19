@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/utils/utils.dart';
+import 'package:hello_world/widgets/body.dart';
 import 'package:hello_world/widgets/contact_button.dart';
+import 'package:hello_world/widgets/row_button.dart';
 
 class Portfalio extends StatelessWidget {
   const Portfalio({Key? key}) : super(key: key);
@@ -40,12 +43,18 @@ class Portfalio extends StatelessWidget {
               Icons.send_sharp,
             ),
             onPressed: () {
-              print("Hello");
+              launchMailto();
             },
           ),
         ],
         backgroundColor: Colors.white,
         elevation: 0.0,
+      ),
+      body: Stack(
+        children: [
+          Body(),
+          RowButton(),
+        ],
       ),
     );
   }
